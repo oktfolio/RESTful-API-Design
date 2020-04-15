@@ -173,15 +173,15 @@ HTTP 1.1消息格式(在第3.1.1节的RFC 7230中定义)对请求没有长度限
 
 下面是Microsoft REST服务应该支持的方法列表。并不是所有资源都支持所有方法，但是使用以下方法的所有资源必须符合它们的用法。
 
-| Method |  Description | Is Idempotent
-|:--|:--|
-| GET | 返回对象的当前值 | True
-| PUT | 在适用时替换对象，或创建命名对象 | True
-| DELETE | 删除对象 | True
-| POST | 根据提供的数据创建一个新对象，或者提交一个操作 | False
-| HEAD | 返回GET响应的对象的元数据。支持GET方法的资源也可能支持HEAD方法 | True
-| PATCH | 更新对象部分应用 | False
-| OPTIONS | 获取关于请求的信息;详见下文。 | True
+| Method |  Description | Is Idempotent |
+|:--|:--|:--|
+| GET | 返回对象的当前值 | True |
+| PUT | 在适用时替换对象，或创建命名对象 | True |
+| DELETE | 删除对象 | True |
+| POST | 根据提供的数据创建一个新对象，或者提交一个操作 | False |
+| HEAD | 返回GET响应的对象的元数据。支持GET方法的资源也可能支持HEAD方法 | True |
+| PATCH | 更新对象部分应用 | False |
+| OPTIONS | 获取关于请求的信息;详见下文。 | True |
 
 #### 7.4.1  POST
 
