@@ -246,16 +246,10 @@ Link: <{help}>; rel="help"
 |:--|:--|:--|
 | Authorization | String | 请求的授权标头 |
 | Date | Date | 请求的时间戳，基于客户端的时钟，采用RFC 5322日期和时间格式。服务器不应该对客户端时钟的准确性做任何假设。此标头可以包含在请求中，但在提供时必须采用此格式。当提供此报头时，必须使用格林尼治平均时间(GMT)作为时区参考。例如：Wed, 24 Aug 2016 18:41:30 GMT. 请注意，GMT正好等于UTC（协调世界时）。 |
-| Accept | Content type |  响应请求的内容类型，如: 
-- application/xml
-- text/xml
-- application/json
-- text/javascript (for JSONP)
-根据HTTP准则，这只是一个提示，响应可能有不同的内容类型，例如blob fetch，其中成功的响应将只是blob流作为有效负载。对于遵循OData的服务，应该遵循OData中指定的首选项顺序。|
-| Accept-Encoding | Gzip, deflate | 如果适用，REST端点应该支持GZIP和DEFLATE编码。对于非常大的资源，服务可能会忽略并返回未压缩的数据。 |
+| Accept | Content type |  响应请求的内容类型，如: application/xml, text/xml, application/json, text/javascript (for JSONP)，根据HTTP准则，这只是一个提示，响应可能有不同的内容类型，例如blob fetch，其中成功的响应将只是blob流作为有效负载。对于遵循OData的服务，应该遵循OData中指定的首选项顺序。|
+| Accept-Encoding | Gzip, deflate | 如果适用，REST端点应该支持GZIP和DEFLATE编码。对于非常大的资源，服务可能会忽略并返回未压缩的数据。|
 | Accept-Language | "en", "es", etc. | 指定响应的首选语言。不需要服务来支持这一点，但是如果一个服务支持本地化，那么它必须通过Accept-Language头来支持本地化。 |
-| Accept-Charset | Charset type like "UTF-8" | 
-默认值是UTF-8，但服务应该能够处理ISO-8859-1 |
+| Accept-Charset | Charset type like "UTF-8" | 默认值是UTF-8，但服务应该能够处理ISO-8859-1 |
 | Content-Type | Content type | Mime type of request body (PUT/POST/PATCH) |
 | Prefer | return=minimal, return=representation | 如果指定了return = minimal首选项，则服务应该返回一个空主体（empty body）以响应一次成功插入或更新。如果指定了return = representation，则服务应该在响应中返回创建或更新的资源。如果服务的场景中客户端有时会从响应中获益，但有时响应会对带宽造成太大的影响，那么它们应该支持这个报头。 |
 | If-Match, If-None-Match, If-Range | String | 使用乐观并发控制支持资源更新的服务必须支持If-Match标头。服务也可以使用其他与ETag相关的头，只要它们遵循HTTP规范。 |
@@ -264,8 +258,7 @@ Link: <{help}>; rel="help"
 
 服务应该返回以下响应标头，除非在“required”列中注明。
 
-| Response Header | Required | Description |
-| 响应报头 | 必填 | 描述 | 
+| Response Header( 响应报头 ) | Required( 必填 ) | Description( 描述 ) |
 |:--|:--|:--|
 | Date | All responses | 根据服务器的时钟，以RFC 5322日期和时间格式处理响应。这个头必须包含在响应中。此报头必须使用格林尼治平均时间(GMT)作为时区参考。例如:Wed, 24 Aug 2016 18:41:30 GMT.请注意，GMT正好等于协调世界时(UTC)。 |
 | Content-Type |  All responses| 内容类型 |
